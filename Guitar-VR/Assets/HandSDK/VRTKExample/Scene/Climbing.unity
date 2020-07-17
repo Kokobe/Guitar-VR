@@ -14661,7 +14661,7 @@ RectTransform:
   - {fileID: 1876646974}
   - {fileID: 1320999444}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15818,7 +15818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &447483529
 GameObject:
@@ -18299,8 +18299,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 513696702}
   note: A#3
+  mute: 0
 --- !u!33 &513696706
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23417,7 +23421,7 @@ Transform:
   m_LocalScale: {x: 0.87, y: 0.05, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &662887290
 Rigidbody:
@@ -23449,12 +23453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_controller: 2
   hand: {fileID: 0}
-  strings: []
-  chordProgression: []
   imageTransform: {fileID: 0}
-  chordTexts: []
   debugText: {fileID: 0}
-  currentChord: 
+  chordManager: {fileID: 0}
 --- !u!1 &663091847
 GameObject:
   m_ObjectHideFlags: 0
@@ -29350,8 +29351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 777453266}
   note: G3
+  mute: 0
 --- !u!33 &777453270
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33116,7 +33121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4153249588296564, guid: 6ff457672b5abe748928751a96880706, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4153249588296564, guid: 6ff457672b5abe748928751a96880706, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34400,7 +34405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312267301092038, guid: 415ab9a1ecb2f934385325ba41adbc31, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4312267301092038, guid: 415ab9a1ecb2f934385325ba41adbc31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37650,7 +37655,7 @@ Transform:
   - {fileID: 657874536}
   - {fileID: 1415225444}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025501040
 GameObject:
@@ -37914,8 +37919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 1025937620}
   note: G#2
+  mute: 0
 --- !u!33 &1025937624
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46233,8 +46242,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 1309010776}
   note: F#1
+  mute: 0
 --- !u!82 &1309010776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -46678,32 +46691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245a708368abb4ca293dea9d7467a621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_controller: 3
+  m_controller: 1
   hand: {fileID: 114428879447481339}
-  strings:
-  - {fileID: 1309010775}
-  - {fileID: 1025937623}
-  - {fileID: 1788408465}
-  - {fileID: 2086414563}
-  - {fileID: 777453269}
-  - {fileID: 513696705}
-  chordProgression:
-  - B1
-  - N
-  - N
-  - N
-  - D#2
-  - C#2
   imageTransform: {fileID: 1320999444}
-  chordTexts:
-  - {fileID: 954919836}
-  - {fileID: 1612850274}
-  - {fileID: 1703793629}
-  - {fileID: 1298539840}
-  - {fileID: 98862549}
-  - {fileID: 1235303229}
   debugText: {fileID: 1993786635}
-  currentChord: B1
+  chordManager: {fileID: 1759592854}
 --- !u!114 &1320999446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49713,7 +49705,7 @@ Transform:
   - {fileID: 383364917}
   - {fileID: 104319452}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1402808329
 GameObject:
@@ -53291,7 +53283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483727301
 GameObject:
@@ -55284,7 +55276,7 @@ Transform:
   m_Children:
   - {fileID: 1533320218}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1533379930
 Transform:
@@ -63010,6 +63002,72 @@ Transform:
   m_Father: {fileID: 40746225}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1759592853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759592855}
+  - component: {fileID: 1759592854}
+  m_Layer: 0
+  m_Name: Chord Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1759592854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759592853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3019f0efb60db46cb80b8c409d6d9f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chordProgression:
+  - B1
+  - N
+  - N
+  - N
+  - D#2
+  - C#2
+  chordTexts:
+  - {fileID: 954919836}
+  - {fileID: 1612850274}
+  - {fileID: 1703793629}
+  - {fileID: 1298539840}
+  - {fileID: 98862549}
+  - {fileID: 1235303229}
+  strings:
+  - {fileID: 1309010775}
+  - {fileID: 1025937623}
+  - {fileID: 1788408465}
+  - {fileID: 2086414563}
+  - {fileID: 777453269}
+  - {fileID: 513696705}
+  currentChord: 
+  song: Redbone
+--- !u!4 &1759592855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759592853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.957, y: 0.90549994, z: 0.529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766276520
 GameObject:
   m_ObjectHideFlags: 0
@@ -64175,8 +64233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 1788408462}
   note: C3
+  mute: 0
 --- !u!33 &1788408466
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -72561,7 +72623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4419020640412130, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4419020640412130, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -74064,8 +74126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e334e1eaa77c4745b89a52a4f9b3ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_controller: 2
+  C3_Guitar: {fileID: 8300000, guid: 696ce8d6b44224b17bccd014e252ffa8, type: 3}
+  C3_Guitar_mute: {fileID: 8300000, guid: 83de61f9ea81046a08eb0daada44cf9d, type: 3}
   audio: {fileID: 2086414560}
   note: D#3
+  mute: 0
 --- !u!33 &2086414564
 MeshFilter:
   m_ObjectHideFlags: 0

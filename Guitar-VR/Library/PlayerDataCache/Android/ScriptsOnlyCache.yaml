@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BodyPositioner
+    - ChordManager
     - FusedVR.HandsController
     - FusedVR.InputManager
     - FusedVR.TouchControllers
@@ -343,6 +344,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15150}
     - Class: 114
       Script: {instanceID: 15166}
+    - Class: 114
+      Script: {instanceID: 30838}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1104,7 +1107,7 @@ ScriptsOnlyBuild:
     className: LocomotionTeleport
   - hash:
       serializedVersion: 2
-      Hash: fac7b57e109ff6233d2b25882e9b79a5
+      Hash: de72211b608f5769aeaa258eaf9d8f4e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JoyStickChordInput
@@ -3114,7 +3117,7 @@ ScriptsOnlyBuild:
     className: VoiceModDemo_Logic
   - hash:
       serializedVersion: 2
-      Hash: 3cfee7b6c450c5a1f799567ea4eeb90c
+      Hash: 5c1f4de317fcf0076eb1c1138d641adc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayNote
@@ -3508,7 +3511,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 0dbfa6a26288615cb686fb09ffe8ec9d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChordManager
   platform: 13
   scenePathNames:
   - Assets/HandSDK/VRTKExample/Scene/Climbing.unity
-  playerPath: /Users/me/asdf.apk
+  playerPath: /Users/me/GitStuff/Guitar-VR/guitarvr.apk
