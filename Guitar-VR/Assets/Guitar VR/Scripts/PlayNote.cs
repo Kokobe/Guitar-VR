@@ -10,19 +10,35 @@ public class PlayNote : MonoBehaviour
     public AudioClip C3_Guitar;
     public AudioClip C3_Guitar_mute;
     public AudioSource audio;
-    public string note = "C3"; // [A-G][#/b][octave] Ex: C4, C#3
-    public bool mute = false;
+    public string noteString = "C3"; // [A-G][#/b][octave] Ex: C4, C#3
+    public OVRHand hand;
 
-    readonly Dictionary<string,int> LETTER_SEMITONES_FROM_C = new Dictionary<string, int>()
+    private Note note;
+    private bool mute;
+    public OVRGrabber m_grabber;
+
+    private void Start()
     {
-        { "C", 0 },
-        { "D", 2 },
-        { "E", 4 },
-        { "F", 5 },
-        { "G", 7 },
-        { "A", 9 },
-        { "B", 11 }
-    };
+        note = new Note(noteString);
+        audio.clip = C3_Guitar;
+    }
+
+    public Note getNote()
+    {
+        return note;
+    }
+
+    public void setNote(string n)
+    {
+        note = new Note(n);
+        noteString = n;
+    }
+
+    public void setNote(Note n)
+    {
+        note = n;
+        noteString = n.toString();
+    }
 
     public void palmMuteSwitch(bool muteOn)
     {
@@ -37,35 +53,32 @@ public class PlayNote : MonoBehaviour
         mute = muteOn;
     }
 
-    private float convertStringToOffset(string note)
+    public void playNote()
     {
-        // TODO: Error check note parameter
-
-        int octaveDiff = int.Parse(note.Substring(note.Length-1, 1)) - 3;
-        int accidental = 0;
-        int letterDiff = 0;
-
-        if (note.Length == 3)
-        {
-            accidental = note.Substring(1, 1).Equals("#") ? 1 : -1;
-        }
-        letterDiff = LETTER_SEMITONES_FROM_C[note.Substring(0, 1)];
-        return octaveDiff * 12 + accidental + letterDiff;
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (note.Length != 0)
+        StartCoroutine(vibrate(0.1f, 0.8f));
+        OVRInput.SetControllerVibration(0.05f, 0.1f, OVRInput.Controller.LTouch);
+        if (note.isLegit())
         {
             if (mute)
             {
                 audio.Stop();
             }
-            audio.pitch = Mathf.Pow(2f, convertStringToOffset(note) / 12.0f);
+            audio.pitch = Mathf.Pow(2f, note.getSemitoneOffsetFromC3() / 12.0f);
             audio.priority -= 1;
             audio.PlayOneShot(audio.clip, 1.0F);
         }
+    }
+
+    IEnumerator vibrate(float sec, float strength)
+    {
+        OVRInput.SetControllerVibration(1, strength, OVRInput.Controller.RTouch);
+        yield return new WaitForSeconds(sec);
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        playNote();
     }
 
     // Update is called once per frame
@@ -75,15 +88,34 @@ public class PlayNote : MonoBehaviour
         {
             audio.priority = 256;
         }
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, m_controller))
+
+
+        bool isHandClosed = false;
+        if (hand.isActiveAndEnabled)
+        {    
+            bool isIndexFingerPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Index);
+            bool isMiddleFingerPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Middle);
+            bool isRingFingerPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Ring);
+            bool isPinkyFingerPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Pinky);
+
+
+            isHandClosed = isIndexFingerPinching;
+            //isHandClosed = m_grabber.isGrabbing
+
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, m_controller) ||
+            (hand.isActiveAndEnabled && isHandClosed))
         {
             palmMuteSwitch(true);
             audio.priority = 256;
         }
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger, m_controller))
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, m_controller) ||
+            (hand.isActiveAndEnabled && !isHandClosed))
         {
             palmMuteSwitch(false);
             audio.priority = 256;
         }
     }
+
 }

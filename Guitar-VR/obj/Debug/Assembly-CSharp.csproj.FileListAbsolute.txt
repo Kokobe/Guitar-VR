@@ -1,2 +1,4 @@
 /Users/me/GitStuff/Oculus-Quest-VRTK-master/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
 /Users/me/GitStuff/Oculus-Quest-VRTK-master/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+/Users/me/GitStuff/Guitar-VR/Guitar-VR/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/me/GitStuff/Guitar-VR/Guitar-VR/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache

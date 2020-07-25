@@ -27,6 +27,8 @@ public class OVRGrabber : MonoBehaviour
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
 
+    public bool isGrabbing = false;
+
     bool alreadyUpdated = false;
 
     // Demonstrates parenting the held object to the hand's transform when grabbed.
@@ -225,10 +227,12 @@ public class OVRGrabber : MonoBehaviour
         if ((m_prevFlex >= grabBegin) && (prevFlex < grabBegin))
         {
             GrabBegin();
+            isGrabbing = true;
         }
         else if ((m_prevFlex <= grabEnd) && (prevFlex > grabEnd))
         {
             GrabEnd();
+            isGrabbing = false;
         }
     }
 

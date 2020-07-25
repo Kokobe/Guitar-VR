@@ -1,0 +1,79 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/me/GitStuff/Guitar-VR/Guitar-VR/Temp/gradleOut/launcher/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/me/GitStuff/Guitar-VR/Guitar-VR/Temp/gradleOut/launcher/src/main/res/values/ids.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "46",
+                        "endOffsets": "97"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
+                    }
+                },
+                {
+                    "source": "/Users/me/.gradle/caches/transforms-2/files-2.1/3d159833d875af682adbc8f8d3df5bd7/res/values/values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "41",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "216",
+                        "endColumns": "43",
+                        "endOffsets": "255"
+                    }
+                },
+                {
+                    "source": "/Users/me/GitStuff/Guitar-VR/Guitar-VR/Temp/gradleOut/launcher/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "2,2",
+                        "startOffsets": "53,98",
+                        "endColumns": "44,65",
+                        "endOffsets": "95,161"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "101,148",
+                        "endColumns": "46,67",
+                        "endOffsets": "143,211"
+                    }
+                },
+                {
+                    "source": "/Users/me/GitStuff/Guitar-VR/Guitar-VR/Temp/gradleOut/launcher/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "5,2,7",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "190,53,288",
+                        "endLines": "6,4,10",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "286,188,513"
+                    },
+                    "to": {
+                        "startLines": "6,8,11",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "260,360,498",
+                        "endLines": "7,10,14",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "355,493,720"
+                    }
+                }
+            ]
+        }
+    ]
+}
