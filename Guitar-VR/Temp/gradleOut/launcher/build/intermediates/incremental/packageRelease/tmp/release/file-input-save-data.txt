@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jul 25 15:11:17 PDT 2020
+#Tue Jul 28 18:06:01 PDT 2020
 60.set=NATIVE_RESOURCE
 52.set=ASSET
 53.base=/Users/me/GitStuff/Guitar-VR/Guitar-VR/Temp/gradleOut/launcher/build/intermediates/merged_assets/release/out

@@ -119,7 +119,7 @@ public class ChordManager : MonoBehaviour
 
     }
 
-    private void initChordTexts()
+    public void initChordTexts()
     {
         for (int i = 0; i < chordTexts.Length; i++)
         {
@@ -132,13 +132,19 @@ public class ChordManager : MonoBehaviour
         }
     }
 
+    public void initChords()
+    {
+        //songManager.init();
+       //currentChordIndex = -1;
+        setStringsToChords(currentChordIndex);
+        initChordTexts();
+    }
+
     // Use this for initialization
     void Start()
     {
         songManager.init();
-        currentChordIndex = -1;
-        setStringsToChords(currentChordIndex);
-        initChordTexts();
+        initChords();
     }
 
 

@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ActivateMenu
     - BodyPositioner
     - ChordManager
     - FollowHand
@@ -15,12 +16,13 @@ ScriptsOnlyBuild:
     - OvrAvatarSettings
     - PlayNote
     - SongManager
+    - UISongMover
+    - UISongSelector
     Oculus.VR.Editor.dll:
     - OVRConfig
     Oculus.VR.dll:
     - OVRCameraRig
     - OVRControllerHelper
-    - OVRGrabber
     - OVRHand
     - OVRHeadsetEmulator
     - OVRManager
@@ -158,13 +160,13 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11342}
-    - Class: 114
       Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11354}
+      Script: {instanceID: 11352}
+    - Class: 114
+      Script: {instanceID: 11356}
     - Class: 114
       Script: {instanceID: 11392}
     - Class: 114
@@ -272,89 +274,93 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13738}
+      Script: {instanceID: 13606}
     - Class: 114
-      Script: {instanceID: 13886}
+      Script: {instanceID: 13740}
     - Class: 114
-      Script: {instanceID: 14032}
+      Script: {instanceID: 13888}
     - Class: 114
-      Script: {instanceID: 14078}
+      Script: {instanceID: 14034}
     - Class: 114
-      Script: {instanceID: 14092}
+      Script: {instanceID: 14080}
     - Class: 114
       Script: {instanceID: 14094}
     - Class: 114
-      Script: {instanceID: 14126}
+      Script: {instanceID: 14096}
     - Class: 114
-      Script: {instanceID: 14146}
+      Script: {instanceID: 14124}
     - Class: 114
-      Script: {instanceID: 14196}
+      Script: {instanceID: 14130}
     - Class: 114
-      Script: {instanceID: 14234}
+      Script: {instanceID: 14150}
     - Class: 114
-      Script: {instanceID: 14338}
+      Script: {instanceID: 14200}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 14238}
     - Class: 114
-      Script: {instanceID: 14362}
+      Script: {instanceID: 14342}
     - Class: 114
-      Script: {instanceID: 14372}
+      Script: {instanceID: 14344}
     - Class: 114
-      Script: {instanceID: 14402}
+      Script: {instanceID: 14366}
     - Class: 114
-      Script: {instanceID: 14428}
+      Script: {instanceID: 14376}
     - Class: 114
-      Script: {instanceID: 14506}
+      Script: {instanceID: 14406}
     - Class: 114
-      Script: {instanceID: 14508}
+      Script: {instanceID: 14432}
     - Class: 114
-      Script: {instanceID: 14528}
+      Script: {instanceID: 14512}
     - Class: 114
-      Script: {instanceID: 14540}
+      Script: {instanceID: 14526}
     - Class: 114
-      Script: {instanceID: 14542}
+      Script: {instanceID: 14534}
     - Class: 114
-      Script: {instanceID: 14598}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14608}
+      Script: {instanceID: 14548}
     - Class: 114
-      Script: {instanceID: 14648}
+      Script: {instanceID: 14604}
     - Class: 114
-      Script: {instanceID: 14676}
+      Script: {instanceID: 14614}
     - Class: 114
-      Script: {instanceID: 14752}
+      Script: {instanceID: 14654}
     - Class: 114
-      Script: {instanceID: 14826}
+      Script: {instanceID: 14682}
     - Class: 114
-      Script: {instanceID: 14914}
+      Script: {instanceID: 14758}
     - Class: 114
-      Script: {instanceID: 14916}
+      Script: {instanceID: 14832}
     - Class: 114
-      Script: {instanceID: 14974}
+      Script: {instanceID: 14920}
     - Class: 114
-      Script: {instanceID: 14986}
+      Script: {instanceID: 14922}
     - Class: 114
-      Script: {instanceID: 14996}
+      Script: {instanceID: 14980}
     - Class: 114
-      Script: {instanceID: 15042}
+      Script: {instanceID: 14992}
     - Class: 114
-      Script: {instanceID: 15058}
+      Script: {instanceID: 15002}
     - Class: 114
-      Script: {instanceID: 15060}
+      Script: {instanceID: 15048}
+    - Class: 114
+      Script: {instanceID: 15064}
     - Class: 114
       Script: {instanceID: 15066}
     - Class: 114
-      Script: {instanceID: 15102}
+      Script: {instanceID: 15072}
     - Class: 114
-      Script: {instanceID: 15112}
+      Script: {instanceID: 15108}
     - Class: 114
-      Script: {instanceID: 15158}
+      Script: {instanceID: 15118}
     - Class: 114
-      Script: {instanceID: 15172}
+      Script: {instanceID: 15164}
     - Class: 114
-      Script: {instanceID: 15176}
+      Script: {instanceID: 15178}
     - Class: 114
       Script: {instanceID: 15182}
+    - Class: 114
+      Script: {instanceID: 15188}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2334,6 +2340,12 @@ ScriptsOnlyBuild:
     className: TeleporterConfigurator
   - hash:
       serializedVersion: 2
+      Hash: b6c0184f25a2627eeb9d7859782372db
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UISongSelector
+  - hash:
+      serializedVersion: 2
       Hash: 89dd43f00aeec6b685242f1c5366b1f7
     assemblyName: Zinnia.Runtime.dll
     namespaceName: Zinnia.Data.Collection.List
@@ -2694,6 +2706,12 @@ ScriptsOnlyBuild:
     className: OrderReverser
   - hash:
       serializedVersion: 2
+      Hash: 931c890ef491f06dc98be3398af9ee12
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UISongMover
+  - hash:
+      serializedVersion: 2
       Hash: 4cf979ef2061790b7f65ca43b5109d55
     assemblyName: Zinnia.Runtime.dll
     namespaceName: Zinnia.Tracking.Modification
@@ -3010,6 +3028,12 @@ ScriptsOnlyBuild:
     assemblyName: Zinnia.Runtime.dll
     namespaceName: Zinnia.Cast.Operation.Mutation
     className: PointsCastPropertyMutator
+  - hash:
+      serializedVersion: 2
+      Hash: 9e0383ab56eae8baaf64dc4779f8ce4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ActivateMenu
   - hash:
       serializedVersion: 2
       Hash: c60b09ed8cd59996a16a7d6449997ee1

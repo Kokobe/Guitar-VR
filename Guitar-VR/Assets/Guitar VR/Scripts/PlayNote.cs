@@ -64,6 +64,10 @@ public class PlayNote : MonoBehaviour
                 audio.Stop();
             }
             audio.pitch = Mathf.Pow(2f, note.getSemitoneOffsetFromC3() / 12.0f);
+            if (audio.priority == 1)
+            {
+                audio.priority = 256;
+            }
             audio.priority -= 1;
             audio.PlayOneShot(audio.clip, 1.0F);
         }
@@ -104,7 +108,7 @@ public class PlayNote : MonoBehaviour
 
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, m_controller) ||
+        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, m_controller) ||
             (hand.isActiveAndEnabled && isHandClosed))
         {
             palmMuteSwitch(true);

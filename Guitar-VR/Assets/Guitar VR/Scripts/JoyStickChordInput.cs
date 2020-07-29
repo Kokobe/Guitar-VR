@@ -74,8 +74,8 @@ public class JoyStickChordInput : MonoBehaviour
             newChordIndex = 3;
         }
 
-        debugText.text = "Index: " + isIndexFingerPinching + "| Middle: " + isMiddleFingerPinching
-                        + "| Ring: " + isRingFingerPinching + "| Pinky: " + isPinkyFingerPinching;
+        //debugText.text = "Index: " + isIndexFingerPinching + "| Middle: " + isMiddleFingerPinching
+         //               + "| Ring: " + isRingFingerPinching + "| Pinky: " + isPinkyFingerPinching;
 
         bool noInput = !(isIndexFingerPinching || isMiddleFingerPinching || isRingFingerPinching
                     || isPinkyFingerPinching);
@@ -86,11 +86,12 @@ public class JoyStickChordInput : MonoBehaviour
         return newChordIndex;
     }
 
+
     // Tells the chord manager the chord index
     void Update()
     {
         bool noInput = false;
-        int newChordIndex = 0;
+        int newChordIndex = -1;
 
         if (!hand.isActiveAndEnabled)
         {
@@ -105,42 +106,49 @@ public class JoyStickChordInput : MonoBehaviour
             noInput = newChordIndex == -1;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        // FOR DESKTOP DEBUG /////////
+        if (Input.GetKey(KeyCode.Q))
         {
             newChordIndex = 0;
             imageTransform.localRotation = Quaternion.Euler(0, 0, newChordIndex * 60);
             chordManager.setStringsToChords(newChordIndex);
             chordIndex = newChordIndex;
+            noInput = false;
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
             newChordIndex = 5;
-
             imageTransform.localRotation = Quaternion.Euler(0, 0, newChordIndex * 60);
             chordManager.setStringsToChords(newChordIndex);
             chordIndex = newChordIndex;
+            noInput = false;
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKey(KeyCode.E))
         {
             newChordIndex = 4;
             imageTransform.localRotation = Quaternion.Euler(0, 0, newChordIndex * 60);
             chordManager.setStringsToChords(newChordIndex);
             chordIndex = newChordIndex;
+            noInput = false;
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKey(KeyCode.R))
         {
             newChordIndex = 3;
             imageTransform.localRotation = Quaternion.Euler(0, 0, newChordIndex * 60);
             chordManager.setStringsToChords(newChordIndex);
             chordIndex = newChordIndex;
+            noInput = false;
         }
+        //////////////////////////////////////
+         //noInput = true; //uncomment to enable debug
 
-        //selector.enabled = !noInput;
-
+        selector.enabled = !noInput; 
+        debugText.text = "no Input: " + noInput;
         if (noInput)
         {
-           // chordManager.setStringsToChords(-1);
+            newChordIndex = -1;
+            chordIndex = -1;
+            chordManager.setStringsToChords(newChordIndex); // comment to enable debug
         }
         else
         {

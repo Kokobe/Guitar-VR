@@ -19,6 +19,11 @@ public class FollowHand : MonoBehaviour
         Vector3 relativePos = transform.position - eye.position;
         // the second argument, upwards, defaults to Vector3.up
         Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-        transform.rotation = rotation;
+        //transform.rotation = rotation;
+        var z = rotation.eulerAngles.z;
+        var x = rotation.eulerAngles.x;
+        var y = rotation.eulerAngles.y;
+        transform.rotation = Quaternion.Euler(new Vector3(x, 0, z));
+
     }
 }
